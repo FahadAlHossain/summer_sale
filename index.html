@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Summer Sale</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .hidden{
+            display: none;
+        }
+    </style>
+  </head>
+  <body class="font-sans text-black bg-gray-50">
+    <header>
+      <section class="bg-orange-100">
+        <div
+          class="w-[70%] m-auto flex flex-col lg:flex-row items-center text-center gap-10"
+        >
+          <div class="flex-1 grid grid-cols-1">
+            <div>
+              <p class="text-2xl my-5">---SALE FEVER---</p>
+              <h1 class="font-bold text-5xl mb-9">
+                Purchase TK 200 or above & get
+                <span class="text-pink-600">20% off</span>
+              </h1>
+              <p class="text-1xl font-semibold">
+                Use Promo Code
+                <span  id="discount-code" class="text-white bg-pink-600 p-1.5 px-3 rounded-lg"
+                  >SELL200</span
+                >
+              </p>
+            </div>
+          </div>
+          <div>
+            <img class="w-auto h-[500px]" src="images/Summer 1.png" alt="" />
+          </div>
+        </div>
+      </section>
+    </header>
+    <main>
+      <section>
+        <div class="text-3xl font-bold w-[85%] m-auto mt-20 mb-4">
+            <h2>Kitchenware</h2>
+        </div>
+        <div class="w-[85%] h-[350px] m-auto flex flex-col lg:flex-row gap-8">
+            <div
+            class="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
+            >
+            <div id="kitchen-1" class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-pink-400 duration-300 card bg-base-100 w-[100%] h-72 shadow-xl bg-white">
+              <figure class="px-10 pt-10">
+                <img
+                  src="images/prod1.png"
+                  alt="Shoes"
+                  class="rounded-xl bg-slate-100 px-16"
+                />
+              </figure>
+              <div class="card-body items-center text-center">
+                <h2 id="item-1" class="card-title">K. Accessories 1</h2>
+                <p id="prod-1-price">39 TK</p>
+              </div>
+            </div>
+            <div id="kitchen-2" class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-pink-400 duration-300 card bg-base-100 w-[100%] h-72 shadow-xl bg-white">
+              <figure class="px-10 pt-10">
+                <img
+                  src="images/prod2.png"
+                  alt="Shoes"
+                  class="rounded-xl bg-slate-100 px-12"
+                />
+              </figure>
+              <div class="card-body items-center text-center">
+                <h2 id="item-2" class="card-title">K. Accessories 2</h2>
+                <p id="prod-2-price">40 TK</p>
+              </div>
+            </div>
+            <div id="kitchen-3" class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-pink-400 duration-300 card bg-base-100 w-[100%] h-72 shadow-xl bg-white">
+              <figure class="px-10 pt-10">
+                <img
+                  src="images/prod3.png"
+                  alt="Shoes"
+                  class="rounded-xl bg-slate-100 px-12"
+                />
+              </figure>
+              <div class="card-body items-center text-center">
+                <h2 id="item-3" class="card-title">K. Accessories 3</h2>
+                <p id="prod-3-price">50 TK</p>
+              </div>
+            </div>
+            
+          </div>
+          <div>
+            <div class="card bg-base-100 bg-white">
+              <div class="card-body">
+                <h2 class="card-title mb-3">Have coupon?</h2>
+                <div class=" justify-start">
+                  <input
+                    class="bg-white p-2 border-slate-300 border-solid border-2 w-2/3"
+                    type="text"
+                    name=""
+                    id="coupon-field"
+                    placeholder="coupon code"
+                  />
+                  <button id="coupon-code" class="btn bg-pink-600 text-white" disabled>Apply</button>
+                </div>
+              </div>
+            </div>
+            <div class="bg-white rounded-xl mt-5 shadow-xl max-h-80 flex flex-col">
+                <!-- Scrollable item list section -->
+                <div id="list" class="overflow-y-auto flex-grow pl-2">
+                  <!-- Add more items if needed -->
+                </div>
+                
+                <!-- Fixed price section -->
+                <div class="border-t border-gray-200 pt-3 mt-3">
+                  <p class="mb-3 font-semibold pl-2">Total Price: <span id="total-price">0</span> TK</p>
+                  <p class="mb-3 font-semibold pl-2">Discount: <span id="discount">0</span> TK</p>
+                  <p class="mb-3 font-semibold pl-2">Total: <span id="total">0</span> TK</p>
+                  <button id="purchase-btn" class="btn w-full bg-pink-600 text-white" disabled>
+                    Make Purchase
+                  </button>
+                </div>
+              </div>              
+          </div>
+        </div>
+          
+        <div class="text-3xl font-bold w-[85%] m-auto mb-4">
+            <h2>Sportswear</h2>
+        </div>
+        <div class="w-[63%]  m-auto md:ml-[108px] lg:ml-[108px] flex justify-end flex-col lg:flex-row gap-8">
+            <div class="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 mb-8">
+                <div id="sports-kit-1" class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-pink-400 duration-300 card bg-base-100 w-[95%] h-72 shadow-xl bg-white">
+                    <figure class="px-10 pt-10">
+                      <img
+                        src="images/prod4.png"
+                        alt="Shoes"
+                        class="rounded-xl bg-slate-100 px-11"
+                      />
+                    </figure>
+                    <div class="card-body items-center text-center">
+                      <h2 id="kit-1" class="card-title">S. Accessories 1</h2>
+                      <p id="sport-1">39 TK</p>
+                    </div>
+                  </div>
+                  <div id="sports-kit-2" class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-pink-400 duration-300 card bg-base-100 w-[95%] h-72 shadow-xl bg-white">
+                    <figure class="px-10 pt-10">
+                      <img
+                        src="images/prod5.png"
+                        alt="Shoes"
+                        class="rounded-xl bg-slate-100 px-9"
+                      />
+                    </figure>
+                    <div class="card-body items-center text-center">
+                      <h2 id="kit-2" class="card-title">S. Accessories 2</h2>
+                      <p id="sport-2">39 TK</p>
+                    </div>
+                  </div>
+                  <div id="sports-kit-3" class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-pink-400 duration-300 card bg-base-100 w-[95%] h-72 shadow-xl bg-white">
+                    <figure class="px-10 pt-10">
+                      <img
+                        src="images/prod6.png"
+                        alt="Shoes"
+                        class="rounded-xl bg-slate-100 px-12"
+                      />
+                    </figure>
+                    <div class="card-body items-center text-center">
+                      <h2 id="kit-3" class="card-title">S. Accessories 3</h2>
+                      <p id="sport-3">39 TK</p>
+                    </div>
+                  </div>
+            </div>
+        </div>
+        <div id="successModal" class="hidden fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center">
+            <div class="bg-white rounded-lg shadow-lg p-6 w-80 text-center">
+              <div class="mb-4">
+                <img src="images/congo.png" alt="Checkmark" class="w-16 h-16 mx-auto" />
+              </div>
+              <h2 class="text-2xl font-bold mb-2">Congratulations</h2>
+              <p class="text-gray-500 mb-4">Your purchase was successful!</p>
+              <button id="goHomeBtn" class="bg-pink-600 text-white py-2 px-4 rounded-lg">
+                Go Home
+              </button>
+            </div>
+          </div>
+          
+      </section>
+    </main>
+    <script src="index.js"></script>
+  </body>
+</html>
